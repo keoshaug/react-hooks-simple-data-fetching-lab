@@ -11,11 +11,10 @@ useEffect(()=>{
     fetch('https://images.dog.ceo/breeds/bulldog-english/mami.jpg')
     .then((res)=>res.json())
     .then((data)=>setImage(data.image))
+    if(!image) {return <p>"Loading..."</p>}
 }, [])
 
-if(!image) {
-    return <p>"Loading..."</p>
-}
+
 
 
 return (
