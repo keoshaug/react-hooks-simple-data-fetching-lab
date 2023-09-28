@@ -13,6 +13,7 @@ afterAll(() => server.close());
 test("displays the dog image after fetching", async () => {
   render(<App />);
   const img = await screen.findByAltText("A Random Dog");
+  console.log(img.src)
   expect(img).toBeInTheDocument();
   expect(img.src).toBe(
     "https://images.dog.ceo/breeds/bulldog-english/mami.jpg"
